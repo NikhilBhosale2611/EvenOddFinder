@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>App 3</title>
+	<style>
+		* {font-size:50px;}
+		body{ background-color:lightblue;}
+	</style>
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+			
+			if(num.value == "")
+			{
+				alert("Empty");
+				ans.innerHTML = "";
+				num.focus();
+			}
+			else
+			{
+				let n = parseInt(num.value);
+				if(n>0)
+				{
+					let snum = Math.sqrt(n);
+					ans.innerHTML = snum;
+				}
+				else
+				{
+					ans.innerHTML = "Negative";
+				}
+			}
+		}
+	</script>
+
+	
+</head>
+<body>
+	<center>
+	<h1>Square Root</h1>
+	<form onsubmit = "check()">
+		<input type="number" id = "num" placeholder = "Enter Number" />
+		<br><br>
+		<input type="submit"/>
+		
+	</form>
+	<h1 id = "ans"></h1>
+	</center>	
+</body>
+</html>
+
+
+
+
+
+
+
